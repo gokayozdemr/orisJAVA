@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giriş Yap</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <div class="giris-kutusu">
+    <h1>Hesabınıza Hoş Geldiniz</h1>
+    <img src="usericon.png" alt="Kullanıcı İkonu">
+    <form action="giris.php" method="POST">
+      <div class="form-grup">
+        <input type="text" id="kullanici_adi" name="kullanici_adi" placeholder="Kullanıcı Adı" required>
+      </div>
+      <div class="form-grup">
+        <input type="password" id="parola" name="parola" placeholder="Parola" required>
+      </div>
+      <button type="submit">Giriş Yap</button>
+    </form>
+    <p>Hesabınız yok mu? <a href="register.html">Kayıt Olun</a></p>
+  </div>
+</div>
+</body>
+</html>
