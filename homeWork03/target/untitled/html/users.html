@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kullanıcılar</title>
+</head>
+<body>
+<h1>Kullanıcılar</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody id="user-table">
+    <!-- Kullanıcılar buraya eklenecek -->
+    </tbody>
+</table>
+
+<script>
+    // Kullanıcıları çekmek için JavaScript kullanacağız
+    fetch('/users')
+        .then(response => response.json())
+        .then(data => {
+            const userTable = document.getElementById('user-table');
+            data.forEach(user => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                        <td>${user.firstName}</td>
+                        <td>${user.secondName}</td>
+                        <td>${user.email}</td>
+                    `;
+                userTable.appendChild(row);
+            });
+        })
+        .catch(error => {
+            console.error('Kullanıcıları çekerken hata oluştu:', error);
+        });
+</script>
+</body>
+</html>
